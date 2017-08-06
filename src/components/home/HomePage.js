@@ -7,7 +7,7 @@ class HomePage extends React.Component{
       <div className="jumbotron">
         <h1>PluralSight Administration</h1>
         <p>React, Redux and React Router is ES6 for ultra-responsive web apps.</p>
-        <Link to="about" className="btn btn-primary btn-lg"></Link>
+        <Link to="about" className="btn btn-primary btn-lg">Learn More</Link>
       </div>
     );
   }
