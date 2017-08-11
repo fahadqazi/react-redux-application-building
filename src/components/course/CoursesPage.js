@@ -27,6 +27,7 @@ class CoursesPage extends React.Component{
   }
 
   render(){
+    debugger;
     return(
       <div>
         <h1>Courses</h1>
@@ -53,6 +54,7 @@ CoursesPage.propTypes = {
 // ownProps is components own props
 // can be used to access routing related props injected by React Router
 function mapStateToProps(state, ownProps) {
+  debugger;
   return {
     courses: state.courses
   };
