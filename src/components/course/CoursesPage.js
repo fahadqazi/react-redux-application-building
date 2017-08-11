@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect, bindActionCreator} from 'react-redux';
-import {bindActionCreator} from 'redux';
 import * as courseActions from '../../actions/courseActions';
 
 class CoursesPage extends React.Component{
