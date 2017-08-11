@@ -1,6 +1,7 @@
 import React from 'react';
-import {connect, bindActionCreator} from 'react-redux';
+import {connect} from 'react-redux';
 import * as courseActions from '../../actions/courseActions';
+import {bindActionCreators} from 'redux';
 
 class CoursesPage extends React.Component{
   constructor(props){
@@ -19,7 +20,7 @@ class CoursesPage extends React.Component{
   }
 
   onClickSave(){
-    this.props.dispatch(courseActions.createCourse(this.state.course));
+    this.props.actions.createCourse(this.state.course);
   }
 
   courseRow(course, index){
@@ -27,7 +28,6 @@ class CoursesPage extends React.Component{
   }
 
   render(){
-    debugger;
     return(
       <div>
         <h1>Courses</h1>
@@ -47,14 +47,14 @@ class CoursesPage extends React.Component{
 }
 
 CoursesPage.propTypes = {
-  dispatch: React.PropTypes.func.isRequired,
-  courses: React.PropTypes.array.isRequired
+  courses: React.PropTypes.array.isRequired,
+  // createCourse: React.PropTypes.func.isRequired,
+  actions: React.PropTypes.object.isRequired
 };
 
 // ownProps is components own props
 // can be used to access routing related props injected by React Router
 function mapStateToProps(state, ownProps) {
-  debugger;
   return {
     courses: state.courses
   };
@@ -62,8 +62,16 @@ function mapStateToProps(state, ownProps) {
 
 // function mapDispatchToProps(dispatch) {
 //   return {
-//     actions: bindActionCreator(actions, dispatch);
-//   }
+//     createCourse: course => dispatch(courseActions.createCourse(course))
+//   };
 // }
 
-export default connect(mapStateToProps)(CoursesPage);
+//this approach binds all actions inside courseActions
+// this way all actions are used using `this.props.actions`
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(courseActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
