@@ -22,7 +22,7 @@ const CourseList = ({courses, deleteCourse}) => {
   );
 };
 
-Courselist.propTypes = {
+CourseList.propTypes = {
   courses: React.PropTypes.array.isRequired
 };
 
