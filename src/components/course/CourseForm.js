@@ -10,7 +10,7 @@ const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => 
         name="title"
         label="Title"
         value={course.title}
-        onChange={onchange}
+        onChange={onChange}
         errors={errors.title}/>
 
       <SelectInput
@@ -51,7 +51,7 @@ CourseForm.propTypes = {
   course: React.PropTypes.object.isRequired,
   allAuthors: React.PropTypes.array,
   // onSave: React.PropTypes.func.isRequired,
-  // onChange: React.PropTypes.func.isRequired,
+  onChange: React.PropTypes.func.isRequired,
   loading: React.PropTypes.bool,
   errors: React.PropTypes.object
 };
