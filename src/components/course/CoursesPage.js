@@ -4,24 +4,24 @@ import * as courseActions from '../../actions/courseActions';
 import {bindActionCreators} from 'redux';
 import CourseList from './CourseList';
 
-class CoursesPage extends React.Component{
-  constructor(props){
+class CoursesPage extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       course: {title: ''}
     };
   }
 
-  courseRow(course, index){
+  courseRow(course, index) {
     return <div key={index}>{course.title}</div>;
   }
 
-  render(){
+  render() {
     const {courses} = this.props;
-    return(
+    return (
       <div>
         <h1>Courses</h1>
-          <CourseList courses={courses}/>
+        <CourseList courses={courses}/>
       </div>
     );
   }
