@@ -21,9 +21,9 @@ const TextInput = ({name, label, onChange, placeholder, value, error}) => {
       </div>
     </div>
   );
-}
+};
 
-TextInput.prototype = {
+TextInput.propTypes = {
   name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,
   onChange: React.PropTypes.func.isRequired,
@@ -32,3 +32,4 @@ TextInput.prototype = {
   error: React.PropTypes.string
 };
 
+export default TextInput;

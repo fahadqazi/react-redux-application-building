@@ -19,9 +19,9 @@ const SelectInput = ({name, label, onChange, defaultOption, value, error, option
       </div>
     </div>
   );
-}
+};
 
-TextInput.prototype = {
+SelectInput.propTypes = {
   name: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,
   onChange: React.PropTypes.func.isRequired,
