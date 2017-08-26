@@ -16,6 +16,7 @@ class ManageCoursePage extends Component{
 
   updateCourseState(event){
     const field = event.target.name;
+    console.log(field);
     let course = Object.assign({}, this.state.course);
     course[field] = event.target.value;
     return this.setState({course: course})
