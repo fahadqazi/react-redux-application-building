@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-class LoadingDots extends Component{
-  constructor(props, context){
+class LoadingDots extends Component {
+  constructor(props, context) {
     super(props, context);
 
-    this.state = {frame: 1}
+    this.state = {frame: 1};
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.interval = setInterval(() => {
       this.setState({
         frame: this.state.frame + 1
@@ -15,14 +15,14 @@ class LoadingDots extends Component{
     }, this.props.interval);
   }
 
-  componentWillMount(){
+  componentWillMount() {
     clearInterval(this.interval);
   }
 
-  render(){
+  render() {
     let dots = this.state.frame % (this.props.dots + 1);
     let text = '';
-    while (dots > 0){
+    while (dots > 0) {
       text += '.';
       dots--;
     }
@@ -37,6 +37,6 @@ LoadingDots.defaultProps = {
 LoadingDots.propTypes = {
   interval: React.PropTypes.number,
   dots: React.PropTypes.number
-}
+};
 
 export default LoadingDots;
