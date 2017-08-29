@@ -33,17 +33,17 @@ class ManageCoursePage extends Component {
 
   saveCourse(event) {
     event.preventDefault();
-    this.setState({saving: true})
+    this.setState({saving: true});
     this.props.actions.saveCourse(this.state.course)
       .then(() => this.redirect())
       .catch(error => {
-        toastr.error(error)
-        this.setState({saving: false})
-      }
-    );
+          toastr.error(error);
+          this.setState({saving: false});
+        }
+      );
   }
 
-  redirect(){
+  redirect() {
     this.setState({saving: false});
     this.context.router.push('/courses');
     toastr.success('Course Saved');
