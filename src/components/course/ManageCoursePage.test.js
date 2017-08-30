@@ -6,7 +6,7 @@ import {ManageCoursePage} from './ManageCoursePage';
 describe('Manage Course Page', () => {
   const props = {
     authors: [],
-    actions: { saveCourse: () => {return Promise.resolve() }},
+    actions: { saveCourse: () => {return Promise.resolve(); }},
     course: {id: '', watchHref: '', title: '', authorId: '', length: '', category: ''}
   };
   it('sets error message when trying to save empty title', () => {
@@ -15,5 +15,5 @@ describe('Manage Course Page', () => {
     expect(saveButton.prop('type')).toBe('submit');
     saveButton.simulate('click');
     expect(wrapper.state().errors.title).toBe('Title must be at least 5 characters.');
-  })
+  });
 });

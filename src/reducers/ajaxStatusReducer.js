@@ -2,7 +2,6 @@ import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
 function actionTypeEndsInSuccess(type) {
-  console.log(type)
   return type.substring(type.length - 8) == '_SUCCESS';
 }
 
